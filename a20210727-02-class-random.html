@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: green 1px dotted;
+        }
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            text-align: center;
+            background-color: #F00;
+            color: white;
+            border: gray 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div id="rect"></div>
+<script src="/lib/ball.js"></script>
+<script>
+    const rect = document.querySelector('#rect');
+    const balls = [];
+
+
+    for(let i=0; i<100; i++){
+        let b = new Ball(rect);
+        balls.push(b);
+    }
+
+    function doAni(){
+        for(let b of balls){
+            const dx = Math.floor(Math.random()*5)-2;
+            const dy = Math.floor(Math.random()*5);
+            b.y -= dy;
+            b.x += dx;
+        }
+        setTimeout(doAni, 30);
+    }
+    doAni();
+
+
+</script>
+</body>
+</html>

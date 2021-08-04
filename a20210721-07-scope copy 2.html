@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+    //  以指定運算的方式，定義函式
+    const func = function() {
+        ar.pop();
+        a--;
+        info.innerHTML +=  'function 裡面:<br>';
+        info.innerHTML +=  JSON.stringify(ar) + '<br>';
+        info.innerHTML +=  a + '<br>';
+    };
+
+    (function () {
+        ar.pop();
+        a--;
+        info.innerHTML +=  'function 裡面:<br>';
+        info.innerHTML +=  JSON.stringify(ar) + '<br>';
+        info.innerHTML +=  a + '<br>';
+
+    })(); 
+    //function 直接呼叫 另用最後大括號後面的（） --->   })(); 
+    // or  }());包覆在裡面 
+
+
+
+
+    //a在local裡面沒找到 會往全域找 在沒看到就是undefined
+    const ar = [7,8,9,10];
+    let a = 100;
+
+    func(ar, a);
+
+    info.innerHTML +=  'function 外面:<br>';
+    info.innerHTML +=  JSON.stringify(ar) + '<br>';
+    info.innerHTML +=  a + '<br>';
+
+</script>
+</body>
+</html>
+
+
+

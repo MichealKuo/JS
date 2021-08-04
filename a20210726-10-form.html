@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <!-- //1.  傳統的表單送出 頁面會刷新 refresh -->
+  <!-- //2.  表單的有效欄位 必須要有name 屬性  -->
+  <!-- //3.  get 方法送 資料會顯示在網址列   -->
+
+<!-- //label for 用來標示 -->
+
+           <!-- //post --> //form data -->
+    <form method="get"> 
+      <label for="account">帳號</label>
+      <input type="text" id="account" name="account" value="John" placeholder="帳號"><br>
+      <label for="password">密碼</label>
+      <input type="password" id="password" name="password" placeholder="密碼"><br>
+
+      <textarea name="ta" id="ta" cols="30" rows="10">21221</textarea><br>
+      
+      <input type="radio" name="radio1" id="radio1_a" value="3"><label for="radio_a">Jogging</label> <br>
+      <input type="radio" name="radio1" id="radio1_b" value="5"><label for="radio_b">climbing</label><br>
+      <input type="radio" name="radio1" id="radio1_c" value="7"><label for="radio_c">swimming</label><br>
+      
+
+      <input type="checkbox" name="cb1" id="cb1" value="2"><label for="cb1">Jogging</label><br>
+      <input type="checkbox" name="cb3" id="cb1" value="4"><label for="cb1">climbing</label><br>
+      <input type="checkbox" name="cb2" id="cb1" value="6"><label for="cb1">swimming</label>
+      <br>
+      <input type="submit"><br>
+
+
+      <!-- 多選一 -->
+      <select name="" id="">
+        <option value="1">假</option>
+        <option value="2">以</option>
+        <option value="3">餅</option>
+        <option value="4">丁</option>
+      </select>
+
+
+
+
+
+
+    </form>
+
+
+
+    <script>
+      console.log( document.forms);
+      console.log( document.forms[0]);
+      console.log( document.forms[0].elements);
+      console.log( document.forms[0].elements[0]);//element[0] 第一個
+
+     // document.forms[0].elements[0].value = 'hello';
+      //document.forms[0].elements[1].value = 'bit';
+
+
+      console.log( document.form1);
+      console.log( document.form1.account);
+      console.log( document.form1.account.value);
+
+      document.form1.account.setAttribute('value','123'); //這可以 但不要這樣設定
+      document.form1.password.setAttribute('type','123'); //這可以 但不要這樣設定
+      document.form1.password.setAttribute('type','123'); //這可以 但不要這樣設定
+      
+
+      //get Attribute
+      //表單裡面的欄位才會用value
+
+
+    </script>
+</body>
+</html>

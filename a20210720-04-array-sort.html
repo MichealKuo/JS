@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+    const ar = ['david', 'aaron','flora','emma'];
+  
+
+    // String由小到大
+    ar.sort(function(a, b){
+        console.log(a, b);
+        return a-b;
+    });
+    info.innerHTML +=  ar.toString() + '<br>';
+
+    // String由大到小
+    ar.sort(function(a, b){
+        return b>a ? 1 : -1 ; 
+    });
+    // ar.reverse();
+    // info.innerHTML +=  ar.toString() + '<br>';
+
+    // 亂數排序
+    ar.sort(function(){
+        return Math.random() - .5;
+    });
+    info.innerHTML +=  ar.toString() + '<br>';
+
+
+const str = '戴資穎草尼粑粑逼逼逼'
+
+const ar2 = str.split('');
+info.innerHTML +=  ar2.toString()+ '<br>';
+</script>
+</body>
+</html>

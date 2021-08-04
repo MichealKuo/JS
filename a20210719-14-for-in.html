@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+<div id="info">
+
+
+</div>
+<script>
+   const info = document.querySelector('#info');
+
+
+    const p1 = {
+        name: 'David',
+        age :25,
+        gender: 'male',
+
+    };
+
+    p1.nickname = 'Dav';
+    p1['my-secret']='123456';
+
+    for(let s in p1) {
+        info.innerHTML += `${s}: ${p1[s]} <br>`;
+    }
+    // 可以用中括號去加一個數字 p1[1]=123  ,chrome console
+
+</script>
+</body>
+</html>

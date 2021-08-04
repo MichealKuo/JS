@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2 id="info"></h2>
+
+<script>
+    const info = document.querySelector('#info');
+
+    const ar = [10, 20, 30, 40, 50];
+    // let ar2 = [...ar];  // 淺層複製, ar.slice(), ar.concat()
+
+    let ar2 = ar;  // 設定參照 (reference, 參考)
+    ar2[2] = 99;
+    info.innerHTML +=  ar2 + '<br>';
+
+    // -----------------------------------
+
+    const ar3 = [
+        {name: 'david', age: 25},
+        {name: 'flora', age: 26},
+    ];
+    ar3.push
+
+    let ar4 = JSON.parse(JSON.stringify(ar3)); 
+    //deep copy ,先轉成json字串 再轉回來
+
+    ar4[1].name = 'emma';
+    info.innerHTML +=  JSON.stringify(ar3) + '<br>';
+    info.innerHTML +=  JSON.stringify(ar4) + '<br>';
+
+// console
+// [{"name":"david","age":25},{"name":"flora","age":26}]
+// [{"name":"david","age":25},{"name":"emma","age":26}]
+
+</script>
+</body>
+</html>

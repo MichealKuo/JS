@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+            //建構函式 建構子
+            constructor(name='noname',age=0) { //形式變數只在在框框內使用 所以使用this在區域變數裏面使用
+                this.name = name;
+                this.age = age;
+            }
+            toString(){
+                const {name , age} = this ;
+                return JSON.stringify({name , age});
+
+                }
+            }
+        //繼承  可以延續繼續寫 
+
+        //Person 是父 Employee是子
+        class Employee extends Person {
+            constructor(eID='', name, age) {
+                super(name, age);
+                this.eID = eID;
+            }
+            toString() {
+                return super.toString();
+                return JSON.stringify({name , age, eID});
+            }
+        }
+
+        
+        const p1 = new Person('bill',23);
+        const p2 = new Employee('david',27);
+
+        console.log(p1.toString());
+        console.log(p2.toString());
+        console.log(p2 instanceof Person);
+
+
+        //物件導向的優點是 模組化 比較彈性
+    </script>
+</body>
+</html>
